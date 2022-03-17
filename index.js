@@ -369,16 +369,33 @@ function kokiaTaiDiena(num){
   // galiausiai i konsole isvesti tris masyvus kuriuose bus
   // triju, penkiu bei triju ir penkiu kartotiniai
 
-function didelesRaides(zodis){
-const arrayFomString = zodis.split(' ')
-for(let i = 0; i<arrayFomString.length; i++){
-
-    for(let j = 0; j<arrayFomString[i].length; j++){
-  //      let newWord =arrayFomString[i][0].toUpperCase()
-
-
-
+  function capitalize(str) {
+    const arrayFromString = str.split(' ');
+    const newArr = []
+    for (let i = 0; i < arrayFromString.length; i++) {
+      let ilgisMinusVienas = arrayFromString[i].length - 1;
+      if(arrayFromString[i].length === 1) {
+        newArr.push(arrayFromString[i][0].toUpperCase());
+      } else {
+        let capitalizedString = arrayFromString[i][0].toUpperCase() +
+        arrayFromString[i].slice(1, arrayFromString[i].length -2) + 
+        arrayFromString[i][ilgisMinusVienas].toUpperCase()
+       newArr.push(capitalizedString)
+      }
     }
-}
-}
+  }
+  
+  capitalize('hkweki mwewqwy name iqweqws weqpw i o')
+  
+  // uzduotis parasyti funkcija, kuri priima Stringa
+  // ir grazina ta pati stinga su prima ir paskutine raide didziosiomis 
+  // gali buti vienas zodis gali buti keli
+  // pradziai padarykite kad tik stingo pirma ir paskutine raide padidina
+  // Bonus uzduotis papildyti funkcija, kad pakeistu visu zodziu stinge pirmas ir paskutines raides
 
+  const randomNumbers = [1, 22, 543, 2, 6, 12, 55, 86, 6, 9, 12, 31, 51, 92, 3]
+  randomNumbers.sort(function(b, a) {
+    return a - b;
+  });
+  
+  console.log(randomNumbers); 
