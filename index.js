@@ -1,6 +1,6 @@
 //skaiciai
-
-/*let a=5;
+/*
+let a=5;
 let b=7;
 let c=9;
 
@@ -39,8 +39,8 @@ let zodis1='namas';
 let zodis2='sodas';
 let result=zodis1.concat(" ",zodis2);
 console.log(result);
-
-
+*/
+/*
 let data = 2;
 data > 2
 2 < data < 10
@@ -55,8 +55,8 @@ if (data < 1) {
     console.log(true)
 }else{
     console.log('HI')
-}*/
-
+}
+*/
 /*
 let ivestaSuma = parseInt(prompt('mokama pinigu suma'));
 let arbat = 0;
@@ -287,7 +287,7 @@ Laipsniu(2,5)
 //console.log(Math.max(a,b))
 //}
 //didesnis(30,20)
-
+/*
 let weekday=new Array(7);
 weekday[1]="Monday";
 weekday[2]="Tuesday";
@@ -392,10 +392,211 @@ function kokiaTaiDiena(num){
   // gali buti vienas zodis gali buti keli
   // pradziai padarykite kad tik stingo pirma ir paskutine raide padidina
   // Bonus uzduotis papildyti funkcija, kad pakeistu visu zodziu stinge pirmas ir paskutines raides
+*/
 
+/*
   const randomNumbers = [1, 22, 543, 2, 6, 12, 55, 86, 6, 9, 12, 31, 51, 92, 3]
-  randomNumbers.sort(function(b, a) {
+  randomNumbers.sort(function(a, b) {
     return a - b;
   });
   
   console.log(randomNumbers); 
+*/
+
+ // Parasyti funkcija kuri suras vidurini zenkla Stringe ir isves ji i console
+// jei stringe yra nelyginis sibloliu skaicius, isvedame vidurini simboli
+// jei lyginis, du vidurinius
+/*
+function grazinkViduriniSimboli(str){
+    if (str.length % 2 === 0) { // lengt = 8
+     // lyginis - 1 = nelyginis 
+     // pirmas sprendimo budas
+      let index = Math.floor((str.length - 1) / 2); // susirasti pirmo vidurinio stringo indexa
+      console.log(str.slice(index, index + 2)) // pridedu 2 nes slice, neitraukia end indexo, todel + 1 netinka
+       // gaunasi kad cia yra slice(1, 1 + 2)
+       // antras sprendimo budas
+      console.log(str.slice(str.length/2-1, str.length/2+1)); 
+   } else {
+     ///         [ T e s s i ] .length() - grazins 5
+     ///         [ 0 1 2 3 4 ]
+     let index = (str.length - 1) / 2;
+     console.log(index); 
+     console.log(str[index]) // str[2]
+     }
+   }
+   
+   grazinkViduriniSimboli('Tessittt')
+
+
+const septiniuKartotinis = function(numer){
+    if (numer % 7 === 0  ){
+        console.log(true)
+    } else {
+        console.log(false)
+    }
+}
+
+septiniuKartotinis(213)
+*/
+
+/*
+
+function addTen(func, num) {
+    console.log(func);
+    console.log(num, 'num')
+    // musu atveju gaunasi, kad sita vieta yra
+    console.log(func(num)) 
+     // konvertuojama i pridesiuDesimt(11)
+  }
+  
+  function pridesiuDesimt(num) {
+    console.log('pridesiuDesimt funkcija gauna skaiciu', num)
+    return  10 + num
+  }
+  // galiausiai gaunasi addTen(20, 11)
+  // addTen(pridesiuDesimt(10), 11)
+  addTen(pridesiuDesimt, 11)
+
+
+/*
+  function viesaFunkcija(){
+    return function getData() {
+      console.log('Slapat info')
+    }
+  }
+  let slaptaInfo = viesaFunkcija();
+  console.log(slaptaInfo)
+  slaptaInfo()
+  
+  function viesaFunkcija(){
+   function getData() {
+      console.log('Slapat info')
+    }
+    getData()
+  }
+  
+  viesaFunkcija()
+
+*/
+/*
+const kvadrato ={
+    plotas: function(leght){
+        console.log(leght**2)
+    },
+    perimetras:function(leght){
+        console.log(leght*4)
+    }
+}
+kvadrato.plotas(10);
+kvadrato.perimetras(10);
+*/
+
+
+//////////////////////////////////////////////////////////////
+
+// revers numbers
+function reversNumbers(x)
+{
+  //x = x +"";          // 1 budas konvertuoti nummbet to string
+  //str = "" + x + "";  // 2 budas konvertuoti nummbet to string
+  stringas = String(x);       // 3 budas konvertuoti nummbet to string 
+
+  return stringas.split("").reverse().join("")
+}
+console.log(Number(reversNumbers(1234539)))
+
+// string atskirimas i atskirus masyvo zenklus
+//1pvz
+console.log('19770224'.split(""));
+//2pvz
+console.log('zenitas'.split(""));
+
+// masyvo sujungimas 
+//1pvz
+pvz1 = ['6','7','2','9','1','3']
+console.log(pvz1.join(""));
+//2pvz
+console.log(['n','2','k','r','r','3'].join(""));
+
+
+/////////////////////////////////////////////////
+
+// rodi surusiuoti abeceles tvarka arba skaicius didejancia tvarka
+// 1 pvz
+function rusiuotiAbecelesTvarka(zodzioRaide){
+  return zodzioRaide. split("").sort().join("");
+}
+console.log(rusiuotiAbecelesTvarka("pasivaikscioti"));
+
+//2 pvz
+function rusiuotiSkaicius(skaitmuo){
+
+//d = skaitmuo + "";        // 1 budas --> number to string
+d = String(skaitmuo);     // 2 budas --> number to string
+//d = "" + skaitmuo + "";   // 3 budas --> number to string
+//d = "" + skaitmuo;        // 4 budas --> number to string
+//d = skaitmuo.toString();    // 5 budas --> number to string
+
+  return d.split("").sort().join("");
+}
+console.log(Number(rusiuotiSkaicius(98746203477510))); //grazin skaicius be 0
+console.log(rusiuotiSkaicius(98746203477510)); //grazin skaicius su 0
+
+////////////////////////////////////////////////////////
+
+
+
+function pirmaDideleRaide(str)
+{
+  let masyvas = str.split(" ");   // " " ---> pakeis tik ptmas dideles raides
+  //let masyvas = str.split("");    // ""  ---> pakeis visas diziosiom raidem
+
+  let naujasMasyvas = [];
+
+  for ( let i = 0; i < masyvas.length; i++)
+      {
+        naujasMasyvas.push(masyvas[i].charAt(0).toUpperCase() + masyvas[i].slice(1));
+      }
+      return naujasMasyvas.join(" ");   //join(" ") sujungia su tarpais
+    //  return naujasMasyvas.join("");   //join("") sujungia be tarpu
+}
+console.log(pirmaDideleRaide("namas stovi ant kalno"));
+
+///////////////////////////////////////////////////////////////
+
+function balsiuSkaicius(str)
+{
+let balsiuSarasas = 'aeiyouAEIYOU';
+let bSkaicius = 0;
+for (let i = 0; i <str.length; i++)
+  {
+    if (balsiuSarasas.indexOf(str[i]) !== -1)
+    {
+      bSkaicius  += 1;
+      console.log(str)
+    }
+  }
+  return bSkaicius;
+}
+console.log(balsiuSkaicius('Antradinio darbas buvo sunkus'))
+
+/////////////////////////////////////////////////////////
+// funkcija generuoja atsitiktine seka is saraso
+function generuojaSeka(zenklas)
+{
+let tekstas = "";
+let zenkluSarasas = "0123456789ABCDEabsde";
+for(let i=0; i < zenklas; i++ )
+{  
+tekstas += zenkluSarasas.charAt(Math.floor(Math.random() * zenkluSarasas.length));
+}
+return tekstas;
+}
+console.log(generuojaSeka(20));
+////////////////////////////////////////////////////////////
+
+// aktivaus puslapio spauzdinimas
+function spauzdintiSiPuslapi()
+{
+window.print();
+}
